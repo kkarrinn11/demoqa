@@ -1,15 +1,15 @@
 from pages.demoqa import DemoQa
 from pages.elements_page import ElementsPage
 
-def test_check_text(demoqa_page):
-    text = '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.'
-    actual_text = demoqa_page.footer.get_text()
-    assert actual_text == text
-    demoqa_page.btn_elements.click()
+def test_check_footer(browser):
+    demo_qa_page = DemoQa(browser)
+    demo_qa_page.visit()
+    assert demo_qa_page.text_footer.get_text() == '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.'
 
-    elements_page = ElementsPage(demoqa_page.driver)
+def test_check_text(browser):
+    demo_qa_page = DemoQa(browser)
+    el_page = ElementsPage(browser)
 
-    expected_text = 'Please select an item from left to start practice.'
-    actual_text = elements_page.center_text.get_text()
-
-    assert expected_text in actual_text
+    demo_qa_page.visit()
+    demo_qa_page.btn_elements.click()
+    assert el_page.text.get_text() == 'Please select an item from left to start practice.'
