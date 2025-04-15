@@ -11,4 +11,15 @@ class Tables (BasePage):
 
         self.no_data = WebElement(driver, 'div.rt-noData')
         self.btn_delete_row = WebElement(driver, '#delete-record-1, #delete-record-2, #delete-record-3')
+        self.btn_add = WebElement(driver, '#addNewRecordButton')
+        self.btn_submit = WebElement(driver, '#submit')
+        self.first_name = WebElement(driver, '#firstName')
+        self.last_name = WebElement(driver, '#lastName')
+        self.user_email = WebElement(driver, '#userEmail')
+        self.age = WebElement(driver, '#age')
+        self.salary = WebElement(driver, '#salary')
+        self.department = WebElement(driver, '#department')
+        self.edit = WebElement(driver, '#edit-record-4 > svg > path')
+        self.table_name = WebElement(driver, '#app > div > div > div > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(4) > div > div:nth-child(1)')
+        self.btn_delete_row_new = WebElement(driver, '#delete-record-4 > svg > path')
 
