@@ -15,7 +15,7 @@ class WebElement:
         self.find_element().click()
 
     def click_force (self):
-        self.driver.execute_script('arguments [0].click;', self.find_element())
+        self.driver.execute_script('arguments[0].click();', self.find_element())
 
     def find_element(self):
         return self.driver.find_element(self.get_by_type(), self.locator)
@@ -59,6 +59,7 @@ class WebElement:
         return True
 
 
+
     def scroll_to_element (self):
         self.driver.execute_script(
             'window.scrollTo(0, document.body.scrollHeight);',
@@ -70,14 +71,14 @@ class WebElement:
             return By.ID
         elif self.locator_type == 'name':
             return By.NAME
-        elif self.locator_type == 'name':
-            return By.NAME
         elif self.locator_type == 'xpath':
             return By.XPATH
         elif self.locator_type == 'css':
             return By.CSS_SELECTOR
+        elif self.locator_type == 'class':
+            return By.CLASS_NAME
         elif self.locator_type == 'link':
             return By.LINK_TEXT
         else:
-            print('Locator type ' + self.locator_type + ' nt correct')
+            print('Locator type ' + self.locator_type + ' not correct')
         return False
