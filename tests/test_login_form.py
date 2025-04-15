@@ -1,5 +1,7 @@
 import time
 
+from selenium.webdriver import Keys
+
 from conftest import browser
 from pages.form_page import FormPage
 
@@ -23,6 +25,13 @@ def test_login_form (browser):
     assert form_page.modal_dialog.exist()
     form_page.btn_close_modal.click_force()
 
-def test_state_city
+def test_state_city (browser):
     form_page = FormPage (browser)
     form_page.visit()
+    time.sleep(2)
+    form_page.btn_state.scroll_to_element()
+    time.sleep(2)
+    form_page.btn_state.click()
+    form_page.inp_state.send_keys(Keys.PAGE_DOWN)
+    form_page.inp_state.send_keys(Keys.ENTER)
+    time.sleep(2)

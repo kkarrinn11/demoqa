@@ -19,3 +19,6 @@ class FormPage (BasePage):
         self.hobbies = WebElement (driver, '#hobbies-checkbox-1')
         self.current_address = WebElement (driver, '#currentAddress')
         self.state_btn = WebElement (driver, '#state > div > div.css-1hwfws3')\
+
+        self.btn_state = WebElement (driver, '#state')
+        self.inp_state = WebElement(driver, '#react-select-3-input')
