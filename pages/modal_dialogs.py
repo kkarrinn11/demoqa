@@ -8,6 +8,10 @@ class ModalDialogs (BasePage):
         self.base_url = 'https://demoqa.com/modal-dialogs'
         self.locator = locator
         self.icon = WebElement(driver, '#app > header > a')
+        self.btn_small = WebElement (driver, '#showSmallModal')
+        self.btn_large = WebElement(driver, '#showLargeModal')
+        self.btn_close_sm = WebElement (driver, '#closeSmallModal')
+        self.btn_close_la = WebElement (driver,'#closeLargeModal')
         super().__init__(driver, self.base_url)
 
         self.not_uni = WebElement (driver, '#app > div > div > div > div:nth-child(1) > div > div > div:nth-child(3) > div > ul > li')
