@@ -28,4 +28,4 @@ def test_decor_1 (browser):
     assert 'disabled' in radio.no.get_dom_attribute('class')
 
 
-@pytest.mark
+
